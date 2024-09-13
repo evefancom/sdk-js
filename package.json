@@ -1,0 +1,23 @@
+{
+  "name": "@evefan/sdk-js",
+  "version": "1.0.4",
+  "description": "Evefan sdk to manage events and query information",
+  "main": "dist/node.js",
+  "browser": "dist/browser.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@duckdb/duckdb-wasm": "1.26.0",
+    "@segment/analytics-next": "1.72.2",
+    "@segment/analytics-node": "2.1.2",
+    "duckdb-async": "1.0.0"
+  },
+  "devDependencies": {
+    "ts-node": "10.9.2",
+    "typescript": "5.5.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
