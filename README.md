@@ -29,13 +29,15 @@ Returns a Promise that resolves with the query results.
 
 ## Code Snippet for Node.js
 
+Note: Our module is a ESM module, so you need to use `import` instead of `require` and in your `package.json` you need to set `"type": "module"`
+
 Here's a standalone code snippet you can use as a starting point:
 
 ```
-const EvefanSDK = require("@evefan/sdk-js").default;
+import Evefan from "@evefan/sdk-js";
 
 async function testEvefanSDK() {
-  const evefan = new EvefanSDK("<write-key>", "<evefan-worker-url>");
+  const evefan = new Evefan("<write-key>", "<evefan-worker-url>");
   const event = {
     userId: "019mr8mf4r",
     event: "Item Purchased",

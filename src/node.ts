@@ -70,4 +70,4 @@ class EvefanSDK {
   }
 }
 
-export default EvefanSDK;
+export = EvefanSDK;
