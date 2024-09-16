@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "lib": ["es2021", "DOM"],
+
+    /* Modules */
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "types": [
+      "@segment/analytics-next",
+      "@segment/analytics-node",
+      "duckdb-async"
+    ],
+    "resolveJsonModule": true,
+
+    "allowJs": true,
+    "checkJs": false,
+
+    "noEmit": false,
+    "declaration": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "strict": true,
+    "skipLibCheck": true,
+
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
