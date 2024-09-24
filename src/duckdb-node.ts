@@ -20,7 +20,6 @@ export async function createDuckDB(
       KEY_ID 'keyid',
       URL_STYLE 'path'
     );
-    set force_download = true;
   `);
 
   return db;
