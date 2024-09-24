@@ -1,6 +1,6 @@
 {
   "name": "@evefan/sdk-js",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Evefan sdk to manage events and query information",
   "main": "dist/node.js",
   "browser": "dist/browser.js",
