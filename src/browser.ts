@@ -10,20 +10,26 @@ class EvefanSDK {
   private db: AsyncDuckDB | null = null;
   private evefan: Record<string, any> | null = null;
   private writeKey: string;
-  private host: string;
+  private evefanHost: string;
 
-  constructor(writeKey: string, host: string) {
+  constructor({
+    evefanHost,
+    writeKey,
+  }: {
+    evefanHost: string;
+    writeKey: string;
+  }) {
+    this.evefanHost = evefanHost;
     this.writeKey = writeKey;
-    this.host = host;
     this.analytics = AnalyticsBrowser.load(
       {
+        cdnURL: evefanHost,
         writeKey,
-        cdnURL: host,
       },
       {
         integrations: {
           "Segment.io": {
-            apiHost: `${host}/v1`,
+            apiHost: `${evefanHost}/v1`,
           },
         },
       }
