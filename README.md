@@ -1,4 +1,4 @@
-# Evefan SDK for JavaScript
+# Evefan SDK for JavaScript (BETA)
 
 Evefan SDK to manage events and query information.
 
@@ -16,7 +16,7 @@ npm install @evefan/sdk-js
 
 Creates a new instance of the Evefan SDK.
 
-- `workerUrl`: URL of the Evefan worker
+- `evefanHost`: The Host URL of the Evefan worker
 - `writeKey`: Your Evefan write key
 
 ### `evefan.query(sqlQuery)`
