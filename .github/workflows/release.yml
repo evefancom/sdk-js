@@ -37,8 +37,6 @@ jobs:
           git add package.json package-lock.json
           git commit -m "ci: bump version to $(node -p -e "require('./package.json').version")" || echo "No changes to commit"
           git push origin main
-          git tag v$(node -p -e "require('./package.json').version")
-          git push origin --tags
 
       - name: Build
         run: npm run build
