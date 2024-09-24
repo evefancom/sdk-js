@@ -18,6 +18,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check out the branch
+        run: |
+          git fetch origin
+          git checkout main
+
       - name: Bump version and commit
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -27,7 +32,7 @@ jobs:
           npm version patch
           git add package.json package-lock.json
           git commit -m "ci: bump version to $(node -p -e "require('./package.json').version")" || echo "No changes to commit"
-          git push
+          git push origin main
           git tag v$(node -p -e "require('./package.json').version")
           git push origin --tags
 
