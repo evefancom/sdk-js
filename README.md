@@ -16,8 +16,8 @@ npm install @evefan/sdk-js
 
 Creates a new instance of the Evefan SDK.
 
-- `writeKey`: Your Evefan write key
 - `workerUrl`: URL of the Evefan worker
+- `writeKey`: Your Evefan write key
 
 ### `evefan.query(sqlQuery)`
 
@@ -36,19 +36,20 @@ Here's a standalone code snippet you can use as a starting point:
 ```js
 import Evefan from "@evefan/sdk-js";
 
-const evefan = new Evefan({ evefanHost, writeKey });
+const ef = new Evefan({ evefanHost, writeKey });
 
-const event = {
+// Track Data
+ef.track({
   userId: "019mr8mf4r",
   event: "Item Purchased",
   properties: {
     revenue: 39.95,
     shippingMethod: "2-day",
   },
-};
+});
 
-const result = await evefan.query("SELECT * FROM evefan limit 5;");
-console.log("Query result:", result);
+// Query Data
+const result = await ef.query("SELECT * FROM evefan limit 5;");
 ```
 
 ## License

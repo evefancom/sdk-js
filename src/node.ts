@@ -17,14 +17,20 @@ class EvefanSDK {
   private analytics: Analytics;
   private db: Database | null = null;
   private writeKey: string;
-  private host: string;
+  private evefanHost: string;
 
-  constructor(writeKey: string, host: string) {
+  constructor({
+    evefanHost,
+    writeKey,
+  }: {
+    evefanHost: string;
+    writeKey: string;
+  }) {
+    this.evefanHost = evefanHost;
     this.writeKey = writeKey;
-    this.host = host;
     this.analytics = new Analytics({
+      host: evefanHost,
       writeKey,
-      host,
     });
   }
 
@@ -54,7 +60,7 @@ class EvefanSDK {
 
   async query(sql: string): Promise<any> {
     if (!this.db) {
-      this.db = await createDuckDB(this.writeKey, this.host);
+      this.db = await createDuckDB(this.writeKey, this.evefanHost);
     }
     const conn = await this.db.connect();
 
