@@ -22,7 +22,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          cd config
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           npm version patch
