@@ -36,7 +36,7 @@ Here's a standalone code snippet you can use as a starting point:
 ```js
 import Evefan from "@evefan/sdk-js";
 
-const evefan = new Evefan("<write-key>", "<evefan-worker-url>");
+const evefan = new Evefan({ evefanHost, writeKey });
 
 const event = {
   userId: "019mr8mf4r",
