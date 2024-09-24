@@ -1,6 +1,6 @@
 # Evefan SDK for JavaScript
 
-Evefan SDK to manage events and query information
+Evefan SDK to manage events and query information.
 
 ## Installation
 
@@ -29,15 +29,15 @@ Returns a Promise that resolves with the query results.
 
 ## Code Snippet for Node.js
 
-Note: Our module is a ESM module, so you need to use `import` instead of `require` and in your `package.json` you need to set `"type": "module"`
+Note: Our module is an ESM module, so you need to use `import` instead of `require` and in your `package.json` you need to set `"type": "module"`
 
 Here's a standalone code snippet you can use as a starting point:
 
-```
+```js
 import Evefan from "@evefan/sdk-js";
 
-async function testEvefanSDK() {
   const evefan = new Evefan("<write-key>", "<evefan-worker-url>");
+
   const event = {
     userId: "019mr8mf4r",
     event: "Item Purchased",
@@ -46,15 +46,9 @@ async function testEvefanSDK() {
       shippingMethod: "2-day",
     },
   };
-  try {
-    const result = await evefan.query("SELECT * FROM evefan limit 5;");
-    console.log("Query result:", result);
-  } catch (error) {
-    console.error("Query error:", error);
-  }
-}
-
-testEvefanSDK().catch(console.error);
+  
+const result = await evefan.query("SELECT * FROM evefan limit 5;");
+console.log("Query result:", result);
 ```
 
 ## License
